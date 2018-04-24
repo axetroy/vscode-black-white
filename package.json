@@ -2,7 +2,7 @@
   "name": "vscode-black-white",
   "displayName": "黑白配",
   "description": "switch your vscode theme betten black and white",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "axetroy",
   "engines": {
     "vscode": "^1.21.0"
