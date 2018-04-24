@@ -2,7 +2,7 @@
 
 Switch your vscode theme betten black and white.
 
-![screenshot](https://github.com/axetroy/vscode-vscode-black-white/raw/master/resources/screenshot/edit.gif)
+![screenshot](https://github.com/axetroy/vscode-vscode-black-white/raw/master/screenshot/edit.gif)
 
 ## [CHANGELOG](https://github.com/axetroy/vscode-black-white/blob/master/CHANGELOG.md)
 
