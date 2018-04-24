@@ -1,0 +1,120 @@
+{
+  "name": "vscode-black-white",
+  "displayName": "黑白配",
+  "description": "switch your vscode theme betten black and white",
+  "version": "0.1.0",
+  "publisher": "axetroy",
+  "engines": {
+    "vscode": "^1.21.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axetroy/vscode-black-white.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/axetroy/vscode-black-white/issues"
+  },
+  "homepage": "https://github.com/axetroy/vscode-black-white#readme",
+  "keywords": [
+    "schema",
+    "json",
+    "vscode",
+    "extension"
+  ],
+  "categories": [
+    "Other"
+  ],
+  "icon": "resources/icon.png",
+  "main": "./out/extension",
+  "activationEvents": [
+    "onCommand:themer.turnLight",
+    "onCommand:themer.turnDark",
+    "onCommand:themer.choose",
+    "onCommand:themer.toggle"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "themer.turnLight",
+        "category": "themer",
+        "title": "Turn Light",
+        "icon": {
+          "dark": "resources/dark/moon.svg",
+          "light": "resources/light/moon.svg"
+        }
+      },
+      {
+        "command": "themer.turnDark",
+        "category": "themer",
+        "title": "Turn Dark",
+        "icon": {
+          "dark": "resources/dark/sun.svg",
+          "light": "resources/light/sun.svg"
+        }
+      },
+      {
+        "command": "themer.choose",
+        "category": "themer",
+        "title": "Change Theme"
+      },
+      {
+        "command": "themer.toggle",
+        "category": "themer",
+        "title": "Toggle Color Theme",
+        "icon": {
+          "dark": "resources/dark/skin.svg",
+          "light": "resources/light/skin.svg"
+        }
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "themer.toggle",
+          "group": "navigation@1",
+          "when": "themer.hasInit==false"
+        },
+        {
+          "command": "themer.turnLight",
+          "group": "navigation@1",
+          "when": "themer.hasInit && themer.isDark"
+        },
+        {
+          "command": "themer.turnDark",
+          "group": "navigation@1",
+          "when": "themer.hasInit && themer.isDark==false"
+        }
+      ],
+      "commandPalette":[
+        {
+          "when": "never",
+          "command": "themer.turnLight"
+        },
+        {
+          "when": "never",
+          "command": "themer.turnDark"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./ && npm run lint",
+    "watch": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "lint": "tslint -p ./ -c tslint.json",
+    "test": "npm run compile && node ./node_modules/vscode/bin/test",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^9.6.6",
+    "conventional-changelog-cli": "^1.3.16",
+    "tslint": "^5.8.0",
+    "tslint-config-prettier": "^1.10.0",
+    "typescript": "^2.8.1",
+    "vscode": "^1.1.14"
+  },
+  "dependencies": {}
+}
