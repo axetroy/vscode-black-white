@@ -1,5 +1,7 @@
 # vscode-black-white
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/axetroy/vscode-black-white.svg)](https://greenkeeper.io/)
+
 Switch your vscode theme betten black and white.
 
 ![screenshot](https://github.com/axetroy/vscode-black-white/raw/master/screenshot.gif)
